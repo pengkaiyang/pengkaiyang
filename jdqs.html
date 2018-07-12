@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="nond.js"></script>
+
+</head>
+<body>
+<header>
+    <div class="head">
+    <div class="nav_left">
+        <img src="logo.png"/>
+    </div>
+    <div class="nav_mid">
+        <ul>
+            <li><a href="#">官网首页</a></li>
+            <li><a href="#">绑定查询</a></li>
+            <li><a href="#" style="color: #a66d00;">国服预约</a></li>
+            <li><a href="#"  style="color: #a66d00;">老兵绑定</a></li>
+            <li><a href="#">游戏特色</a></li>
+            <li><a href="#">社区APP</a></li>
+            <li><a href="#">网吧认证</a></li>
+        </ul>
+    </div>
+    <div class="nav_right">
+      <button type="button" style="width: 140px;height: 40px;margin-left: 20px;margin-top: 20px;background: #e69800;font-size: 18px;color: white">进入官网</button>
+    </div>
+    </div>
+</header>
+    <div class="left_nav">
+        <ul class="nav_content">
+            <li onclick="changeTo(0)">第一</li>
+            <li onclick="changeTo(1)">第二</li>
+            <li onclick="changeTo(2)">第三</li>
+            <li onclick="changeTo(3)">第四</li>
+        </ul>
+    </div>
+    <div class="APP"  style="transform:translate(0,0);transition: all 1s ">
+        <div class="first_box" style="display: block;">
+            <video style="width:100% " src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_e69987bb8934400eb786a159f45985ce.f0.mp4?vkey=28B37D6BB89BA365B36B7576BA4831411BFC018D2A56679F23FDD3C6754024FA3D5861C60C9E8E43CC278B56987D8DB12E276EB94E4AD88B31FD0EAB40FCDF0CC61878D4C989326CD1840AC50E43C4CD8958D3F589CE90B0&sha=0" autoplay="" loop="" ></video>
+             <p class="first_png sprite"></p>
+        </div>
+        <div class="second_box" style="display: block;margin-top: -20px">
+            <video   src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_18cc6cba2ebb4635aa06d2020134d1be.f0.mp4?vkey=7DD360CCE99797935A99F8EBBC2AA293D2B050FCD1B9B0C677D4B0CA7174101758956F121CF920A5D806B74861144A631384D7341BADA13F0F55AAE0944C681AB836ED23B146428844335C9D35F9CC9F1E0E7851315DA75F&sha=0" loop="" ></video>
+            <p class="two_png sprite"></p>
+        </div>
+        <div class="three_box" style="display: block;margin-top: -20px">
+            <video   src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_e48ffd8a30074766bfae4ba50cbbbce5.f0.mp4?vkey=D30F17B405BB419A31A13E9C3E4AA121EC920662299A8715F83A855FC502C1DA9585BFF529C4F08E1A53DCFBE4E76E8676A8A59614E4E3B63B2E4973812B7455BD2C12B88F0B536C17A10C275F5393D30DF2A23F96D7A800&sha=0" loop="" ></video>
+            <p class="three_png sprite"></p>
+        </div>
+        <div class="four_box" style="display: block;margin-top: -20px">
+            <video   src="http://videooc.tc.qq.com/vcloud1022.tc.qq.com/1022_5dad5415ceb249339a0bf9662bfd414e.f0.mp4?vkey=E1EBDC705EBE77336137AB2CFEB4FC528FCB73D56454691F3953AFFFEA7344018608125762AEE8D78325270065C9A70354592FEC15CA076BEE5749B9062D5D5FC4D5BD418F69585F6772B006A6B236D43DAE7C589A32DB86&sha=0" loop=""  ></video>
+            <p class="four_png sprite"></p>
+        </div>
+</div>
+<script type="text/javascript">
+
+       var index = 0 ;//定义显示的是第几个视频
+// 找到所有的视频盒子
+        var video_boxs = document.querySelectorAll('.APP > div');
+        var shuzu=document.querySelectorAll('.nav_content>li');
+        var box_length=video_boxs.length-1;
+  /*      function upDown(event){
+            video_boxs[index].querySelector('video').pause();
+
+            if (event.key == 'ArrowDown') {
+                // 往下的时候
+                ++index;
+            } else {
+                if ('ArrowUp' == event.key) {
+                    // 往上的时候
+                    --index;
+
+                }
+            }
+            var y = -780*index;
+            video_boxs[index].querySelector('video').play();
+            document.querySelector('.APP').style.transform = 'translate(0,'+y+'px)';
+            if(index>3)
+            {
+                document.querySelector('.APP').style.transform = 'translate(0,-2340px)';
+            }
+          if(index<0)
+        {
+         document.querySelector('.APP').style.transform = 'translate(0,0)';
+       }
+        } */
+       var A=0;
+       function changebox(step,A)     //函数外包。
+       {
+           video_boxs[index].querySelector('video').pause();
+           if(A>=0)
+           {
+               index = A;
+                $(function(){
+                   $(".nav_content>li").click(function(){
+                       $(".nav_content>li").eq(index).addClass("inp").siblings().removeClass("inp");
+                   });
+                   });
+           }
+           else
+           {
+               if (step == 'down') {
+                   // 往下的时候
+                  index= ++index>=box_length?box_length:index;
+
+               } else {
+                   if ('up' == step) {
+                       // 往上的时候
+                       index=--index<=0?0:index;
+
+                   }
+           }
+
+           }
+         $(function(){
+                   $(".nav_content>li").eq(index).addClass("inp").siblings().removeClass("inp");
+           });
+           var y = -780*index;
+           video_boxs[index].querySelector('video').play();
+                isChange=false;
+           document.querySelector('.APP').style.transform = 'translate(0,'+y+'px)';
+
+       }
+            var  isChange=false;// 表示盒子现在没有发生变换
+       //添加高亮样式：
+       $(function(){
+
+       });
+       // 键盘触发后的事件
+       function keyHandle(event){
+
+           var step = ''
+           if (event.key == 'ArrowDown') {
+               // 往下的时候
+               step = 'down'
+           }else if(event.key == 'ArrowUp') {
+               // 往上的时候
+               step = 'up'
+           }
+           changebox(step)
+       }
+
+
+       //鼠标滚动事件
+
+        function scrollHandle(event) {
+            var step = ''
+            var e=event||window.event;
+            var num= e.detail==0?-e.wheelDelta: e.detail;
+            console.log(event.detail);
+            if (num>0) {
+                // 往下的时候
+                step = 'down'
+            } else {
+                // 往上的时候
+                step = 'up'
+            }
+            if (!isChange) {
+              //计时器。
+                setTimeout(function () {
+                    changebox(step)
+                }, 1000);
+              //  改为正在变换；
+                 isChange=true;
+            }
+        }
+       function changeTo(index) {
+           changebox('',index);
+       }
+           window.addEventListener('keydown',keyHandle,true);
+    // 火狐浏览器鼠标监听
+       document.addEventListener('DOMMouseScroll',scrollHandle,false);
+       //  火狐以外浏览器鼠标监听
+       document.mousewheel=mouses;
+</script>
+</body>
+</html>

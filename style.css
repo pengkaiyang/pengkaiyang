@@ -1,0 +1,143 @@
+*{
+    margin: 0 ;
+    padding: 0;
+}
+body
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+.head
+{
+    width: 1390px;
+    height: 80px;
+     margin: 0 auto;
+}
+header
+{
+    width: 100%;
+    position: fixed;
+     z-index: 20;
+      height: 80px;
+    background: black;
+    margin: 0 auto;
+}
+.nav_left
+{
+  width: 20%;
+    height: 80px;
+     float: left;
+}
+.nav_left img
+{
+    position: relative;
+    left: 80px;
+}
+.nav_mid
+{
+    width: 60%;
+    height: 40px;
+     float: left;
+    margin-top: 20px;
+}
+.nav_mid ul
+{
+   display: flex;
+    width: 100%;
+    height: 40px;
+}
+.nav_mid ul li
+{
+  width: 14%;
+
+}
+.nav_mid ul li a {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+
+.APP
+{
+   position: relative;
+    display: block;
+
+}
+
+video
+{
+    width: 100%;
+    height: 775px;
+    display: block;
+
+}
+.sprite
+{
+   background: url("sprite.png");
+}
+.APP > div
+{
+    position: relative;
+}
+.first_png
+{
+    position: absolute;
+    height: 238px;
+    bottom: 200px;
+    left: 22%;
+    width: 786px;
+    background-position: 0 -82px;
+}
+.two_png
+{
+    position: absolute;
+    height: 160px;
+    bottom: 260px;
+    left: 22%;
+    width: 475px;
+    background-position: -300px, -200px;
+}
+.three_png
+{
+    position: absolute;
+    height: 238px;
+    bottom: 200px;
+    left: 22%;
+    width: 786px;
+    background-position: 0 -82px;
+}
+.four_png
+{
+    position: absolute;
+    height: 238px;
+    bottom: 200px;
+    left: 22%;
+    width: 786px;
+    background-position: 0 -82px;
+}
+
+.left_nav{
+         background: url(bg_nav.png);
+         position: absolute;
+         left: 0;
+         top: 100px;
+           width: 42px;
+          height: 936px;
+          z-index: 100;}
+         .nav_content{color: #fff}
+.nav_content{color: #fff}
+.nav_content > ul {list-style-type: none}
+.nav_content li{position: absolute; left: 40px;width: 100px}
+.nav_content li:nth-child(1){top: 50px;}
+.nav_content li:nth-child(2){top: 150px}
+.nav_content li:nth-child(3){top: 253px}
+.nav_content li:nth-child(4){top: 353px}
+.inp
+{
+    color:#e69800;
+}
